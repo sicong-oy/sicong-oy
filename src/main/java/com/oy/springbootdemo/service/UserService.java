@@ -1,9 +1,10 @@
 package com.oy.springbootdemo.service;
 
-import com.oy.springbootdemo.entity.User;
-import org.springframework.stereotype.Service;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.oy.springbootdemo.entity.UserDTO;
+import com.oy.springbootdemo.entity.po.User;
 
 
-public interface UserService {
-    void addUser(User user);
+public interface UserService extends IService<User> {
+    void addUser(UserDTO userDTO);
 }
