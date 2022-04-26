@@ -31,4 +31,9 @@ public class UserController {
         return modelAndView;
     }
 
+    @GetMapping("/login")
+    private ModelAndView aaa(){
+        ModelAndView modelAndView = new ModelAndView("index.html");
+        return modelAndView;
+    }
 }
