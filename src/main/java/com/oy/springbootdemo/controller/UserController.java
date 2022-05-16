@@ -31,9 +31,10 @@ public class UserController {
         return modelAndView;
     }
 
-    @GetMapping("/login")
-    private ModelAndView aaa(){
-        ModelAndView modelAndView = new ModelAndView("index.html");
-        return modelAndView;
+
+    @GetMapping("/testThread")
+    private String testThread(){
+        userService.testThread();
+        return "modelAndView";
     }
 }

@@ -5,9 +5,12 @@ import com.oy.springbootdemo.dao.UserDao;
 import com.oy.springbootdemo.entity.User;
 import com.oy.springbootdemo.entity.UserDTO;
 import com.oy.springbootdemo.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 @Service
@@ -20,5 +23,23 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
     @Override
     public void addUser(UserDTO userDTO) {
 
+    }
+
+    @Override
+    public void testThread() {
+        ExecutorService service = Executors.newFixedThreadPool(5);
+        service.execute(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 1000000000; i++) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(i);
+                }
+            }
+        });
     }
 }
