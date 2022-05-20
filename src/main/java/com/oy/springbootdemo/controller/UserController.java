@@ -4,13 +4,15 @@ import com.oy.springbootdemo.entity.User;
 import com.oy.springbootdemo.entity.UserDTO;
 import com.oy.springbootdemo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
-@RestController
+@Controller
 @RequestMapping("/user")
 public class UserController {
     @Autowired
@@ -28,6 +30,8 @@ public class UserController {
     @GetMapping("/login")
     private ModelAndView login(){
         ModelAndView modelAndView = new ModelAndView("index.html");
+        List<User> list = userService.list();
+        modelAndView.addObject(list);
         return modelAndView;
     }
 
