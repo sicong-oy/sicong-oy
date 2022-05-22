@@ -29,9 +29,9 @@ public class UserController {
 
     @GetMapping("/login")
     private ModelAndView login(){
-        ModelAndView modelAndView = new ModelAndView("index.html");
+        ModelAndView modelAndView = new ModelAndView("login.html");
         List<User> list = userService.list();
-        modelAndView.addObject(list);
+        modelAndView.addObject("arr",list);
         return modelAndView;
     }
 

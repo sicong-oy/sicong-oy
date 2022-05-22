@@ -5,7 +5,7 @@ mybatis:
     map-underscore-to-camel-case: true
 spring:
   thymeleaf:
-    cache: true
+    cache: false
     prefix: classpath:/templates/
     suffix: .html
   datasource:

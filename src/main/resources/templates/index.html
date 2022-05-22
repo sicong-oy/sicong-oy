@@ -5,17 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<p th:text="${key1}"></p>
-<br/>
-<p>模板引擎简单的循环：</p>
 <p  th:each = "item : ${arr}" th:text="${item}"></p>
-
-<p th:text="${name}"></p>
-<p>当数据中含有html要解析的时候，用到utext</p>
-<p th:utext="${name}"></p>
-
-<p th:text="${null}">1</p>
-<p th:text="${null}">2</p>
-<p th:text="${key_common}"></p>
 </body>
 </html>
