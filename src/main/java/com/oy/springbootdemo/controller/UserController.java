@@ -1,5 +1,6 @@
 package com.oy.springbootdemo.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.oy.springbootdemo.entity.User;
 import com.oy.springbootdemo.entity.UserDTO;
 import com.oy.springbootdemo.service.UserService;
@@ -8,11 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
     @Autowired
@@ -23,7 +23,7 @@ public class UserController {
     }
     @GetMapping("/findAll")
     private List<User> selectUser(){
-        List<User> list = userService.list();
+        IPage<User> iPage = userService.selectList()
         return list;
     }
 
