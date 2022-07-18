@@ -1,5 +1,8 @@
 package com.oy.springbootdemo.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.oy.springbootdemo.entity.User;
 import com.oy.springbootdemo.entity.UserDTO;
@@ -23,17 +26,16 @@ public class UserController {
     }
     @GetMapping("/findAll")
     private List<User> selectUser(){
-        IPage<User> iPage = userService.selectList()
-        return list;
+        return null;
     }
-
-    @GetMapping("/login")
-    private ModelAndView login(){
-        ModelAndView modelAndView = new ModelAndView("login.html");
-        List<User> list = userService.list();
-        modelAndView.addObject("arr",list);
-        return modelAndView;
-    }
+//
+//    @GetMapping("/login")
+//    private ModelAndView login(){
+//        ModelAndView modelAndView = new ModelAndView("login.html");
+////        List<User> list = userService.list();
+//        modelAndView.addObject("arr",list);
+//        return modelAndView;
+//    }
 
 
     @GetMapping("/testThread")

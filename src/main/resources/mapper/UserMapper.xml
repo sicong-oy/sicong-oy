@@ -6,4 +6,7 @@
         <result column="username" property="username"/>
         <result column="password" property="password"/>
     </resultMap>
+    <select id="selectUser" resultMap="userMap">
+        select * from user
+    </select>
 </mapper>
