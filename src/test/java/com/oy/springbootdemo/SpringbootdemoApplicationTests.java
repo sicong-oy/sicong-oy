@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashMap;
+
 
 @SpringBootTest(classes = SpringbootdemoApplication.class)
 @RunWith(SpringRunner.class)
@@ -15,6 +17,7 @@ class SpringbootdemoApplicationTests {
     private UserDao userDao;
     @Test
     public void content(){
+        HashMap hashMap = new HashMap();
         userDao.selectUser();
     }
 }
