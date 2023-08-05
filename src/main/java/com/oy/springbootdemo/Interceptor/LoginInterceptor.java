@@ -1,7 +1,5 @@
 package com.oy.springbootdemo.Interceptor;
 
-import com.oy.springbootdemo.dao.UserDao;
-import com.oy.springbootdemo.entity.User;
 import com.oy.springbootdemo.service.UserService;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -9,7 +7,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 public class LoginInterceptor implements HandlerInterceptor {
     @Resource
